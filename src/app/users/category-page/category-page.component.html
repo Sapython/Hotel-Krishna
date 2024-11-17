@@ -1,0 +1,199 @@
+<app-header></app-header>
+<div class="osahan-home-page pb-5">
+  <div class="bg-light">
+    <div class="cart-resize">
+      <div class="bg-light border-bottom p-3">
+        <a class="text-primary font-weight-bold" routerLink="/"
+          ><i class="feather-chevron-left"></i> Back</a
+        >
+        <a
+          class="text-success font-weight-bold"
+          data-toggle="modal"
+          data-target="#FilterModal"
+          href="#"
+          style="float: right"
+        >
+        </a>
+      </div>
+      <div class="most_popular p-3">
+        <h4 class="font-weight-bold m-0 pb-3"> Availabel Rooms </h4>
+        <div class="row" id="CategoryWiseItemDetailsShow">
+          <div class="col-lg-4 col-xs-12 col-sm-6 col-md-6 pb-3" *ngFor="let product of products; index as i;">
+            <div
+              class="
+                list-card
+                bg-white
+                h-100
+                rounded
+                overflow-hidden
+                position-relative
+                shadow-sm
+                grid-card
+              "
+            >
+              <div class="list-card-image">
+                <div
+                  class="star position-absolute"
+                >
+                  <span class="badge badge-success">
+                    <i class="feather-star"></i>
+                    4.55 ( 168 Reviews )
+                  </span>
+                </div>
+                <a >
+                  <img
+                    src="assets/uploads/itemimages/{{ product.image }}"
+                    class="img-fluid item-img w-100"
+                  />
+                </a>
+              </div>
+              <div class="p-3 position-relative">
+                <div class="list-card-body">
+                  <div class="dish-contents d-flex">
+                    <div
+                      class="
+                        col-8 col-lg-8 col-md-8 col-xs-8 col-sm-8
+                        pl-0
+                        pr-0
+                        pb-2
+                      "
+                    >
+                      <h6 class="mb-1 mt-1">
+                        <a (click)="getProductData(product.id)" class="text-black">
+                          {{ product.name }}
+                        </a>
+                      </h6>
+                    </div>
+                    <div
+                      class="
+                        col-4 col-lg-4 col-md-4 col-xs-4 col-sm-4
+                        pl-0
+                        pr-0
+                        pb-2
+                      "
+                    >
+                      <p class="text-gray mb-0 time">
+                        <span
+                          class="
+                            price-container-ss
+                            bg-light
+                            text-dark
+                            rounded-sm
+                            pl-2
+                            pb-1
+                            pt-1
+                            pr-2
+                            price-ss
+                          "
+                        >
+                          ₹ {{ product.price }} /-</span
+                        >
+                      </p>
+                    </div>
+                    <div
+                      class="
+                        col-8 col-lg-8 col-md-8 col-xs-8 col-sm-8
+                        pl-0
+                        pr-0
+                      "
+                    >
+                      <p class="text-gray mb-3">
+                        {{ product.description }}
+                      </p>
+                    </div>
+                    <div
+                      class="
+                        col-4 col-lg-4 col-md-4 col-xs-4 col-sm-4
+                        pl-0
+                        pr-0
+                      "
+                    >
+                      <button
+                        class="btn btn-primary btn-block add-btn"
+                      (click)="addProductToCart(product.id)"
+                      >
+                        Add
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
+
+<!--Addons and Options Popup-->
+<div
+  class="modal fade login-component ss-addon-modal show"
+  id="addons-options-modal"
+  role="dialog"
+
+  aria-modal="true"
+>
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="login-block">
+          <button type="button" class="close modal-close" data-dismiss="modal">
+            ×
+          </button>
+          <div id="adons-options-block">
+            <form id="addtocartform" method="post" autocomplete="false">
+              <div class="mx-auto w-100">
+                <div
+                  class="bg-primary pt-3 pb-3 shadow-sm mt-3 ml-0 mr-0 w-100"
+                >
+                  <img
+                    src="assets/uploads/itemimages/{{ singleProductData?.image }}"
+                    class="img-fluid w-100 p-3"
+                  />
+                </div>
+                <div
+                  class="
+                    bg-primary
+                    col-12
+                    pt-3
+                    pb-3
+                    shadow-sm
+                    mt-3
+                    row
+                    ml-0
+                    mr-0
+                  "
+                >
+                  <div class="col-6 pl-0 pr-0" >
+                    <span class="badge badge-success">{{ singleProductData?.name }} </span>
+                  </div>
+                  <div class="col-6 text-right pl-0 pr-0">
+                    <div class="price-tag card-item-price">
+                      ₹ <span id="hp_final_cost">{{ singleProductData?.price }}</span>/-
+                    </div>
+                  </div>
+                  <h6 class="mb-1 font-weight-bold pt-2">
+                    {{ singleProductData?.name }}
+                  </h6>
+                  <input type="hidden" id="totalcost118810979" value="{{ singleProductData?.price }}" />
+                  <div class="col-12 pt-1 pb-1 pl-0 pr-0">
+                    <p>
+                      {{ singleProductData?.description }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer p-0 border-0">
+                <div class="col-12 m-0 p-0"></div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Addons and Options Popup-->

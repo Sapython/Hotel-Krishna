@@ -1,0 +1,164 @@
+<app-header></app-header>
+<div class="osahan-checkout mb-5 height-fill">
+  <div class="px-3 pt-3 pb-1">
+    <h2 class="font-weight-bold m-0 pt-1 cart-resize with-title">Cart</h2>
+  </div>
+  <div class="p-3 osahan-cart-item cart-resize">
+    <div class="bg-white rounded shadow mb-3 py-2">
+      <h6 class="mb-1 font-weight-bold p-3">Order Summary</h6>
+      <div id="cartdetails">
+        <div
+          class="
+            item-container-single
+            d-flex
+            gold-members
+            align-items-center
+            justify-content-between
+            px-3
+            py-2
+            border-bottom
+            row
+            ml-0
+            mr-0
+            align-items-center
+          "
+          *ngFor="let item of cartItems; index as i;"
+        >
+          <div
+            class="media align-items-center addon-grp-checkout col-7 pl-0 pr-0"
+          >
+            <div class="media-body addon-option-name">
+              <div class="d-flex">
+                <p class="m-0"></p>
+                <div class="mr-2 text-success">·</div>
+                <div class="txt-sizing">{{ item.name }}</div>
+                <p></p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="
+              d-flex
+              justify-content-end
+              align-items-center
+              btns-grp-checkout
+              col-5
+              pl-0
+              pr-0
+            "
+          >
+            <div class="grp-it">
+              <span class="count-number float-right"
+                ><button
+                  type="button"
+                  class="btn-sm left dec btn btn-outline-secondary"
+                >
+                  <i class="feather-minus"></i></button
+                ><input
+                  class="count-number-input"
+                  type="text"
+                  name=""
+                  readonly=""
+                  value="1" /><button
+                  type="button"
+                  class="btn-sm right inc btn btn-outline-secondary"
+                >
+                  <i class="feather-plus"></i></button
+              ></span>
+              <p
+                class="
+                  text-gray
+                  mb-0
+                  float-right
+                  ml-2
+                  text-muted
+                  small
+                  price-pop
+                "
+              >
+                ₹ {{ item.price }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mb-3 shadow bg-white rounded p-3 py-1 mt-3"
+      data-toggle="modal"
+      data-target="#LoginModal"
+    >
+      <div class="apply-coupon-div row mx-auto">
+        <div class="col-6">
+          <svg width="25px" height="25px" viewBox="0 0 19 11">
+            <path
+              fill="#094f8d"
+              d="M.634 0C.284 0 0 .274 0 .611v9.778c0 .338.284.611.634.611h17.733c.35 0 .633-.273.633-.611V.611C19 .274 18.716 0 18.367 0H.634zm3.8 1.222c0-.337.284-.611.633-.611.35 0 .634.274.634.611v1.223c0 .337-.284.61-.634.61-.35 0-.633-.273-.633-.61V1.222zm0 3.667c0-.337.284-.61.633-.61.35 0 .634.273.634.61v1.223c0 .337-.284.61-.634.61-.35 0-.633-.273-.633-.61V4.889zm0 3.667c0-.337.284-.61.633-.61.35 0 .634.273.634.61v1.222c0 .338-.284.612-.634.612-.35 0-.633-.274-.633-.612V8.556zm9.5-2.444c.7 0 1.266.547 1.266 1.221 0 .676-.567 1.222-1.266 1.222-.7 0-1.267-.546-1.267-1.222 0-.674.567-1.221 1.267-1.221zm-3.8-3.667c.699 0 1.266.547 1.266 1.222 0 .674-.567 1.221-1.267 1.221-.699 0-1.266-.547-1.266-1.221 0-.675.567-1.222 1.266-1.222zm.504 5.865c-.209.269-.604.323-.883.122-.279-.202-.335-.584-.126-.853l3.8-4.889c.209-.269.604-.323.883-.121.279.201.335.583.126.852l-3.8 4.889z"
+            ></path>
+          </svg>
+          <span class="ml-1">Apply Coupon</span>
+        </div>
+        <div class="col-6 pl-0 pr-0 float-right">
+          <button
+            id="button-addon2"
+            type="button"
+            class="btn btn-primary float-right"
+          >
+            View All Coupons
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="shadow bg-white rounded p-3 clearfix mb-5">
+      <p class="mb-1">
+        Sub Total <span class="float-right text-dark">₹ 7555</span>
+      </p>
+      <p class="mb-1">
+        Internet Handle Charge<span class="float-right text-dark">₹ 13.80</span>
+      </p>
+      <hr />
+      <h6 class="mb-0 pb-2" style="font-size: 10px">
+        Round Off <span class="float-right">₹ 0.20</span>
+      </h6>
+      <h6 class="font-weight-bold mb-0 pb-2">
+        Grand Total <span class="float-right">₹ 7589.00</span>
+      </h6>
+      <button
+      class="
+        btn btn-primary
+        w-100
+        btn-block
+        mt-4
+      "
+      routerLink="/checkout"
+    >
+      Next
+    </button>
+    </div>
+    <div class="btns-ss-two fixed-bottom">
+      <div class="col-6 m-0 p-0">
+        <button
+          type="button"
+          class="btn btn-primary border-top btn-lg btn-block"
+          data-toggle="modal"
+          data-target="#LoginModal"
+          routerLink="/sign-up"
+        >
+          Login
+        </button>
+      </div>
+      <div class="col-6 m-0 p-0">
+        <button
+          type="button"
+          class="btn btn-primary btn-lg btn-block"
+          data-toggle="modal"
+          data-target="#SignupPopup"
+          routerLink="/sign-up"
+        >
+          Sign-up
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

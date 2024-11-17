@@ -1,0 +1,515 @@
+<app-header></app-header>
+<div class="pb-2 rounded home-page">
+  <div class="pt-4 pb-4">
+    <div class="px-3 pt-3 pb-1"></div>
+    <ngx-slick-carousel [config]="sliderConfig" class="offer-slider pt-3 pb-3 ml-5 mr-5 mx-auto container">
+
+      <div ngxSlickItem class="cat-item px-1 py-2">
+        <a class="bg-white d-block text-center shadow">
+          <img
+            src="assets/uploads/banner/slider (3).png"
+            class="img-fluid rounded"
+            atl=""
+          />
+        </a>
+      </div>
+      <div ngxSlickItem class="cat-item px-1 py-2 mx-auto ">
+        <a class="bg-white d-block text-center shadow">
+          <img
+            src="assets/uploads/banner/slider (3).png"
+            class="img-fluid rounded"
+            atl=""
+          />
+        </a>
+      </div>
+    </ngx-slick-carousel>
+    <div class="container col-xxl-8 px-4 py-5">
+      <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+        <div class="col-lg-6 pb-4">
+          <h1 class="display-5 fw-bold lh-1 mb-3">Serving Hospitality since 2009!</h1>
+          <p class="lead">Hotel Krishna runs the finest restaurants of the state with their revolutionary stay ideas. From Restaurant to events, from Indian to Italian, We are known for serve the best quality stays.</p>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <button type="button" class="btn btn-primary px-4 me-md-2">Book rooms</button>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-8 col-lg-6 pb-2">
+          <img src="assets/img/Business.jpg" class="d-block mx-lg-auto img-fluid" alt="" width="100%" height="auto" loading="lazy">
+        </div>
+      </div>
+    </div>
+    <ngx-slick-carousel [config]="bannerConfig" class="offer-slider pt-3 pb-3">
+      <div ngxSlickItem class="cat-item px-3 py-2">
+        <a class="bg-white d-block text-center shadow">
+          <img
+            src="assets/uploads/banner/banner (1).jpg"
+            class="img-fluid rounded"
+            atl=""
+          />
+        </a>
+      </div>
+      <div ngxSlickItem class="cat-item px-3 py-2">
+        <a class="bg-white d-block text-center shadow">
+          <img
+            src="assets/uploads/banner/banner (2).jpg"
+            class="img-fluid rounded"
+            atl=""
+          />
+        </a>
+      </div>
+      <div ngxSlickItem class="cat-item px-3 py-2">
+        <a class="bg-white d-block text-center shadow">
+          <img
+            src="assets/uploads/banner/banner (3).jpg"
+            class="img-fluid rounded"
+            atl=""
+          />
+        </a>
+      </div>
+      <div ngxSlickItem class="cat-item px-3 py-2">
+        <a class="bg-white d-block text-center shadow">
+          <img
+            src="assets/uploads/banner/banner (4).jpg"
+            class="img-fluid rounded"
+            atl=""
+          />
+        </a>
+      </div>
+      <div ngxSlickItem class="cat-item px-3 py-2">
+        <a class="bg-white d-block text-center shadow">
+          <img
+            src="assets/uploads/banner/banner (1).jpg"
+            class="img-fluid rounded"
+            atl=""
+          />
+        </a>
+      </div>
+      <div ngxSlickItem class="cat-item px-3 py-2">
+        <a class="bg-white d-block text-center shadow">
+          <img
+            src="assets/uploads/banner/banner (2).jpg"
+            class="img-fluid rounded"
+            atl=""
+          />
+        </a>
+      </div>
+    </ngx-slick-carousel>
+    <div class="container-for-lg pt-3 pb-5">
+      <!-- Start Category wise item slider -->
+      <div class="p-2 title">
+        <h2 class="font-weight-bold m-0 pt-1 cart-resize with-title w-100">
+          Comfortable rooms, premium service and amazing view
+        </h2>
+        <h5 class="m-0 pt-2 pb-2">Availabel Rooms</h5>
+      </div>
+      <ngx-slick-carousel [config]="productConfig" class="trending-slider">
+        <div
+          ngxSlickItem
+          class="osahan-slider-item py-2 px-2"
+          *ngFor="let dish of products; index as i"
+        >
+          <div
+            class="
+              list-card
+              bg-white
+              h-100
+              rounded
+              overflow-hidden
+              position-relative
+              shadow-sm
+            "
+          >
+            <div class="list-card-image">
+              <img
+                src="assets/uploads/itemimages/{{ dish.image }}"
+                class="img-fluid item-img w-100"
+              />
+            </div>
+            <div class="p-3 position-relative">
+              <div class="list-card-body">
+                <div class="dish-contents d-flex">
+                  <div
+                    class="
+                      col-8 col-lg-8 col-md-8 col-xs-8 col-sm-8
+                      pl-0
+                      pr-0
+                      pb-2
+                    "
+                  >
+                    <h6 class="mb-1 mt-1">
+                      <div
+                        class="text-black item-nm"
+                        (click)="getProductData(dish.id)"
+                      >
+                        {{ dish.name }}
+                      </div>
+                    </h6>
+                  </div>
+                  <div
+                    class="
+                      col-4 col-lg-4 col-md-4 col-xs-4 col-sm-4
+                      pl-0
+                      pr-0
+                      pb-2
+                    "
+                  >
+                    <p class="text-gray mb-0 time">
+                      <span
+                        class="
+                          price-container-ss
+                          bg-light
+                          text-dark
+                          rounded-sm
+                          pl-2
+                          pb-1
+                          pt-1
+                          pr-2
+                          price-ss
+                          small
+                        "
+                      >
+                        ₹ {{ dish.price }}/-</span
+                      >
+                    </p>
+                  </div>
+                  <div class="col-12 pl-0 pr-0">
+                    <p class="small mb-3">
+                      {{ dish.description }}
+                    </p>
+                  </div>
+                  <div class="col-12 pl-0 pr-0 float-right">
+                    <button
+                      class="
+                        btn btn-primary btn-sm
+                        w-50
+                        btn-block btn-small
+                        float-right
+                      "
+                      (click)="setRoomCheckout()"
+                    >
+                      Book now
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ngx-slick-carousel>
+      <!-- End Category first slider -->
+    </div>
+    <div class="container text-center">
+      <h2>OFFERS & PRIVILEGES</h2>
+      <hr>
+      <div class="shadow bg-white rounded p-3">
+        <div class="row p-5 d-flex" style="justify-content: space-evenly;">
+          <div class="col-lg-4 col-xs-12 text-left left-border">
+            <span>25% OFF ON RESORT ROOM.<br></span>
+            on published tariff & availability
+          </div>
+          <div class="col-lg-4 col-xs-12 text-left left-border">
+            <span>10% OFF ON FOOD<br></span>
+            RESTAURANT
+          </div>
+        </div>
+        <div class="row p-5 d-flex" style="justify-content: space-evenly;">
+          <div class="col-lg-4 col-xs-12 text-left left-border">
+            <span>25% OFF ON RESORT ROOM.<br></span>
+            on published tariff & availability
+          </div>
+          <div class="col-lg-4 col-xs-12 text-left left-border">
+            <span>10% OFF ON FOOD<br></span>
+            RESTAURANT
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-3">
+      <div class="row mx-auto">
+        <div class="bg-light p-3">
+
+          <div
+            class="
+              bg-white
+              rounded
+              shadow-sm
+              p-3
+              mb-3
+              restaurant-detailed-ratings-and-reviews
+            "
+          >
+            <a class="text-primary float-right" href="#">Top Rated</a>
+            <h4 class="mb-1">See what customer says
+            </h4>
+            <div class="reviews-members py-3">
+              <div class="media">
+                <a href="#"
+                  ></a>
+                <div class="media-body">
+                  <div class="reviews-members-header">
+                    <div class="star-rating float-right">
+                      <div class="d-inline-block" style="font-size: 14px">
+                        <i class="feather-star text-warning"></i>
+                        <i class="feather-star text-warning"></i>
+                        <i class="feather-star text-warning"></i>
+                        <i class="feather-star text-warning"></i>
+                        <i class="feather-star"></i>
+                      </div>
+                    </div>
+                    <h6 class="mb-0">
+                      <a class="text-dark" href="#">Trump</a>
+                    </h6>
+                    <p class="text-muted small">Tue, 20 Mar 2020</p>
+                  </div>
+                  <div class="reviews-members-body">
+                    <p>
+                      Contrary to popular belief, Lorem Ipsum is not simply
+                      random text. It has roots in a piece of classNameical
+                      Latin literature from 45 BC, making it over 2000 years
+                      old.
+                    </p>
+                  </div>
+                  <div class="reviews-members-footer">
+                    <a
+                      class="total-like btn btn-sm btn-outline-primary"
+                      href="#"
+                      ><i class="feather-thumbs-up"></i> 856M</a
+                    >
+                    <a
+                      class="total-like btn btn-sm btn-outline-primary"
+                      href="#"
+                      ><i class="feather-thumbs-down"></i> 158K</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr />
+            <div class="reviews-members py-3">
+              <div class="media">
+                <a href="#"
+                  ></a>
+                <div class="media-body">
+                  <div class="reviews-members-header">
+                    <div class="star-rating float-right">
+                      <div class="d-inline-block" style="font-size: 14px">
+                        <i class="feather-star text-warning"></i>
+                        <i class="feather-star text-warning"></i>
+                        <i class="feather-star text-warning"></i>
+                        <i class="feather-star text-warning"></i>
+                        <i class="feather-star"></i>
+                      </div>
+                    </div>
+                    <h6 class="mb-0">
+                      <a class="text-dark" href="#">Jhon Smith</a>
+                    </h6>
+                    <p class="text-muted small">Tue, 20 Mar 2020</p>
+                  </div>
+                  <div class="reviews-members-body">
+                    <p>
+                      It is a long established fact that a reader will be
+                      distracted by the readable content of a page when looking
+                      at its layout.
+                    </p>
+                  </div>
+                  <div class="reviews-members-footer">
+                    <a
+                      class="total-like btn btn-sm btn-outline-primary"
+                      href="#"
+                      ><i class="feather-thumbs-up"></i> 88K</a
+                    >
+                    <a
+                      class="total-like btn btn-sm btn-outline-primary"
+                      href="#"
+                      ><i class="feather-thumbs-down"></i> 1K</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr />
+            <a class="text-center w-100 d-block mt-3 font-weight-bold" href="#"
+              >See All Reviews</a
+            >
+          </div>
+          <div class="bg-white rounded shadow-sm p-3 rating-review-select-page">
+            <h6 class="mb-3">Leave Comment</h6>
+            <div class="d-flex align-items-center mb-3">
+              <p class="m-0 small">Rate the Place</p>
+              <div class="star-rating ml-auto">
+                <div class="d-inline-block">
+                  <i class="feather-star text-warning"></i>
+                  <i class="feather-star text-warning"></i>
+                  <i class="feather-star text-warning"></i>
+                  <i class="feather-star text-warning"></i>
+                  <i class="feather-star"></i>
+                </div>
+              </div>
+            </div>
+            <form>
+              <div class="form-group">
+                <label class="form-label small">Your Comment</label
+                ><textarea class="form-control"></textarea>
+              </div>
+              <div class="form-group mb-0">
+                <button type="button" class="btn btn-primary btn-block">
+                  Submit Comment
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
+<!--Addons and Options Popup-->
+<div
+  class="modal fade login-component ss-addon-modal show"
+  id="rooms-view"
+  role="dialog"
+  aria-modal="true"
+>
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body bg-light">
+        <div class="login-block bg-white">
+          <button type="button" class="close modal-close" data-dismiss="modal">
+            ×
+          </button>
+          <div id="adons-options-block">
+            <div class="row mx-auto w-100 d-flex shadow-sm align-items-start">
+              <div
+                class="col-sm-12 col-xs-12 col-md-6 pt-3 pb-3 mt-3 ml-0 mr-0"
+              >
+                <img
+                  src="assets/uploads/itemimages/{{ productData?.image }}"
+                  class="img-fluid w-100"
+                />
+              </div>
+              <div
+                class="
+                  col-sm-12 col-xs-12 col-md-6
+                  pt-3
+                  pb-3
+                  mt-3
+                  row
+                  ml-0
+                  mr-0
+                "
+              >
+                <div class="col-12 pl-0 pr-0">
+                  <span class="badge badge-success">Availabel</span>
+                </div>
+                <h4 class="mb-1 font-weight-bold pt-2">
+                  {{ productData?.name }}
+                </h4>
+                <div class="col-12 py-2 px-0">
+                  <h6 class="d-flex">
+                    ₹ <span id="hp_final_cost">{{ productData?.price }}</span
+                    >/-
+                  </h6>
+                </div>
+                <input
+                  type="hidden"
+                  id="totalcost118810979"
+                  value="{{ productData?.price }}"
+                />
+                <div class="col-12 pt-1 pb-1 pl-0 pr-0">
+                  <p>
+                    {{ productData?.description }}
+                  </p>
+                </div>
+                <div class="row w-100 col-12">
+                  <div class="col-12 align-items-center d-flex icon-box">
+                    <div class="feather-user"></div>
+                    <span>2 ADULTS</span>
+                  </div>
+                  <div class="col-12 align-items-center d-flex icon-box">
+                    <div class="feather-box"></div>
+                    <span>ROOM 130FT²</span>
+                  </div>
+                </div>
+                <button
+                  class="btn btn-primary w-100 btn-block mt-4"
+                  (click)="setRoomCheckout()"
+                >
+                  Book now
+                </button>
+              </div>
+              <div class="col-12 py-3 room-services">
+                <h5 class="font-weight-bold m-0 pt-1">Room services</h5>
+                <div class="items py-3">
+                  <div class="row">
+                    <div class="item col-6 col-sm-4 col-md-4 pl-3">
+                      <div class="t">
+                        <div class="feather-wind"></div>
+                        <div class="label">Air Conditioning</div>
+                      </div>
+                    </div>
+                    <div class="item col-6 col-sm-4 col-md-4 pl-3">
+                      <div class="t">
+                        <div class="icon hotel-icon-bathtub1"></div>
+                        <div class="label">Attached Bathroom</div>
+                      </div>
+                    </div>
+                    <div class="item col-6 col-sm-4 col-md-4 pl-3">
+                      <div class="t">
+                        <div class="icon hotel-icon-bellboy"></div>
+                        <div class="label">Bellboy service</div>
+                      </div>
+                    </div>
+                    <div class="item col-6 col-sm-4 col-md-4 pl-3">
+                      <div class="t">
+                        <div class="icon hotel-icon-ironing-board"></div>
+                        <div class="label">Clean service</div>
+                      </div>
+                    </div>
+                    <div class="item col-6 col-sm-4 col-md-4 pl-3">
+                      <div class="t">
+                        <div class="icon hotel-icon-credit-card"></div>
+                        <div class="label">Contact less check-in</div>
+                      </div>
+                    </div>
+                    <div class="item col-6 col-sm-4 col-md-4 pl-3">
+                      <div class="t">
+                        <div class="icon hotel-icon-waiter"></div>
+                        <div class="label">Doctor on Call</div>
+                      </div>
+                    </div>
+                    <div class="item col-6 col-sm-4 col-md-4 pl-3">
+                      <div class="t">
+                        <div class="icon hotel-icon-car-parking"></div>
+                        <div class="label">Free Parking</div>
+                      </div>
+                    </div>
+                    <div class="item col-6 col-sm-4 col-md-4 pl-3">
+                      <div class="t">
+                        <div class="icon hotel-icon-newspaper"></div>
+                        <div class="label">Newspaper</div>
+                      </div>
+                    </div>
+                    <div class="item col-6 col-sm-4 col-md-4 pl-3">
+                      <div class="t">
+                        <div class="icon hotel-icon-telephone"></div>
+                        <div class="label">Telephone</div>
+                      </div>
+                    </div>
+                    <div class="item col-6 col-sm-4 col-md-4 pl-3">
+                      <div class="t">
+                        <div class="icon hotel-icon-wifi1"></div>
+                        <div class="label">Wi-fi</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Addons and Options Popup-->
